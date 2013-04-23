@@ -1,0 +1,35 @@
+[ (
+	"MyStuff", 
+		[ ("Increase FPS", self.faster, "=", None),
+		  ("Decrease FPS", self.slower, "-", None)]
+) ]
+
+
+
+[ 
+	( "RootMenu",
+		[ ( 
+			"SubMenu",
+				[ ("Item",cmd,hotkey,None),
+				  ("Item",cmd,hotkey,None)
+				],
+		    "SubMenu",
+				[ ("Item",cmd,hotkey,None),
+				  ("Item",cmd,hotkey,None)
+				]
+		) ]
+	),
+	( "RootMenu",
+		[ ( 
+			"SubMenu",
+				[ ("Item",cmd,hotkey,None),
+				  ("Item",cmd,hotkey,None)
+				],
+		    "SubMenu",
+				[ ("Item",cmd,hotkey,None),
+				  ("Item",cmd,hotkey,None)
+				]
+		) ]
+	)
+]
+

@@ -1,0 +1,29 @@
+..\rv-win32-x86-3.12.17\src\python\rvSession
+
+
+import rvSession
+
+s = rvSession.Session()
+s.setFPS(24)
+
+video = 'd:/test.mov'
+
+source = s.newNode('Source')
+source.setUIName('mySource')
+source.setMedia(video)
+
+seq = s.newNode('Sequence', 'mySequence')
+seq.addInput(source)
+
+stack = s.newNode('Stack', 'myStack')
+stack.setWipes(1)
+stack.setCompOp('replace')
+stack.addInput(seq)
+
+layout = s.newNode('Layout', 'myLayout')
+layout.setLayoutMode('packed')
+layout.addInput(seq)
+
+s.setViewNode(layout)
+
+s.write('d:/debug.rv')

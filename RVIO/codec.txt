@@ -1,0 +1,4 @@
+rvio test.mov -o foo.mov -codec avc1
+
+DTV_1018_120000.tif
+rvio \\37digital-282\All\DTV_1018_@@@@@@.tif -codec avc1 -scale 0.5 -quality 0.7 -outfps 24 -o d:/ttt2_s.mov

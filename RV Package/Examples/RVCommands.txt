@@ -1,0 +1,51 @@
+from rv import rvtypes, commands
+
+class RVPackage(rvtypes.MinorMode):
+    "A simple example that shows how to make shift-Z start/stop playback"
+
+    def closeSession(self, event):
+        commands.close()
+    def clearSession(self, event):
+        commands.clearSession()
+    def addSource(self, event):
+        commands.addSource('d:/test.mov','testSource')
+    def newSession(self, event):
+        commands.newSession([])
+    def openFileDialog(self, event):
+        print commands.openFileDialog(False,False,False,None,None)
+    def openUrl(self, event):
+        commands.openUrl('d:/S08.rv')
+    def watchFile(self, event):
+        commands.watchFile('d:/S08.rv', True)
+        
+    def sessionFromUrl(self, event):#
+        commands.sessionFromUrl('d:/S08.rv')
+    def newNode(self, event):#
+        commands.newNode('Sequence','luxun')
+    def nodeType(self, event):#
+        print commands.nodeType('test')
+        
+    def __init__(self):
+        rvtypes.MinorMode.__init__(self)
+        self.init("Luxun", 
+                  None, 
+                  None,
+                  [("Luxun", 
+                    [("Close Session", self.closeSession, "", None),
+                     ("Clear Session", self.clearSession, "", None),
+                     ("New Session", self.newSession, "", None),
+                     ("Add Source", self.addSource, "", None),
+                     ("Open File Dialog", self.openFileDialog, "", None),
+                     ("Open URL", self.openUrl, "", None),
+                     ("Watch File", self.watchFile, "", None),
+                     ("Session From URL", self.sessionFromUrl, "", None),
+                     ("New Node", self.newNode, "", None),
+                     ("Node Type", self.nodeType, "", None)
+                    ]
+                   )
+                  ]
+                 )
+
+
+def createMode():
+    return RVPackage()

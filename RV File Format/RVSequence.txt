@@ -1,0 +1,47 @@
+GTOa (3)
+
+rv : RVSession (2) 
+{
+    session
+    {
+        string viewNode = "mySequence"
+    }
+}
+
+sourceGroup000000_source : RVFileSource (0) { media { string movie =  "d:/test.mov" } }
+sourceGroup000001_source : RVFileSource (0) { media { string movie =  "d:/test.mov" } }
+
+connections : connection (1)
+{
+    evaluation
+    {
+        string lhs = [ "sourceGroup000000"
+                       "sourceGroup000001" ]
+        string rhs = [ "mySequence"
+                       "mySequence" ]
+    }
+}
+
+mySequence : RVSequenceGroup (0)
+{
+    ui
+    {
+        string name = "GUI Name of My Sequence"
+    }
+}
+
+mySequence_sequence : RVSequence (0)
+{
+    edl
+    {
+        int frame  = [  1 11 21 31 41 ]
+        int source = [  0  1  0  1  0 ]
+        int in     = [  1  1 11 11  0 ]
+        int out    = [ 10 10 20 20  0 ]
+    }
+
+    mode
+    {
+        int autoEDL = 0
+    }
+} 

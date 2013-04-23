@@ -1,0 +1,48 @@
+package: Python My Stuff
+author: Tweak Software
+organization: Tweak Software
+version: 1.0
+rv: 3.12
+requires: ''
+
+modes: 
+  - file: pymystuff
+    load: immediate
+
+description: |
+
+  <p> This package is used as an example in reference manual (A Simple
+  Package chapter) to explain how to make a simple package for personal
+  customizations (in Python) like key bindings, and a simple menu bar
+  addition </p>
+
+  <p> The package demonstrates two things: </p>
+
+  <ul>
+  <li> Custom key bindings </li>
+  <li> Creating a personal menu bar menu </li>
+  </ul>
+
+
+# ----------------------------------------
+package: Python Example Mode
+author: Dr Benway
+organization: Tweak Software
+contact: support@tweaksoftware.com
+version: 1.0
+requires: ''
+rv: 3.12.9
+url: http://www.tweaksoftware.com
+
+modes: 
+  - file: pyhello.py
+    menu: 'Tools/PYHELLO'
+    shortcut: ''
+    event: ''
+    load: immediate
+
+description: |
+    <p>
+    This is a simple python package example
+    </p>
+

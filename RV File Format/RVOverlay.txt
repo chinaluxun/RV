@@ -1,0 +1,74 @@
+GTOa (3)
+
+sourceGroup1_source : RVFileSource (1)
+{
+    media
+    {
+        string movie = "solid,red=1.0,green=1.0,blue=1.0,start=1,end=10,width=720,height=480.movieproc"
+    }
+}
+
+sourceGroup1_overlay : RVOverlay (1)
+{
+    overlay
+    {
+        int show = 1 
+    }
+    "rect:red"
+    {
+        float width = 0.3
+        float height = 0.3
+        float[4] color = [ [ 1.0 0.1 0.1 0.4 ] ]
+        float[2] position = [ [ 0.1 0.1 ] ]
+    }
+    "rect:green"
+    {
+        float width = 0.6
+        float height = 0.2
+        float[4] color = [ [ 0.1 1.0 0.1 0.4 ] ]
+        float[2] position = [ [ -0.2 -0.3 ] ]
+    }
+    "rect:blue"
+    {
+        float width = 0.2
+        float height = 0.4
+        float[4] color = [ [ 0.1 0.1 1.0 0.4 ] ]
+        float[2] position = [ [ -0.5 -0.1 ] ]
+    }
+    "text:red"
+    {
+        float[2] position = [ [ 0.1 0.1 ] ]
+        float[4] color = [ [ 0 0 0 1 ] ]
+        float spacing = 0.8
+        float size = 0.005
+        float scale = 1
+        float rotation = 0
+        string font = ""
+        string text = "red"
+        int debug = 0
+    }
+    "text:green"
+    {
+        float[2] position = [ [ -0.2 -0.3 ] ]
+        float[4] color = [ [ 0 0 0 1 ] ]
+        float spacing = 0.8
+        float size = 0.005
+        float scale = 1
+        float rotation = 0
+        string font = ""
+        string text = "green"
+        int debug = 0
+    }
+    "text:blue"
+    {
+        float[2] position = [ [ -0.5 -0.1 ] ]
+        float[4] color = [ [ 0 0 0 1 ] ]
+        float spacing = 0.8
+        float size = 0.005
+        float scale = 1
+        float rotation = 0
+        string font = ""
+        string text = "blue"
+        int debug = 0
+    }
+}

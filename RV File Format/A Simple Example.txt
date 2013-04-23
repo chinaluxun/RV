@@ -1,0 +1,9 @@
+GTOa (3)
+
+sourceGroup000000_source : RVFileSource (0)
+{
+    media
+    {         
+        string movie =  "d:/test.mov"
+    }
+}

@@ -1,0 +1,32 @@
+rv_reference.pdf P72
+
+
+color.alphaType 		int 	 	1	By default (0), uses the alpha type reported by the incoming
+										image. Otherwise, 1 means the alpha is premultiplied, 0
+										means the incoming alpha is unpremultiplied.
+color.normalize 		int 	 	1	Non-0 means to normalize the incoming pixels to [0,1]
+color.logtype 			int 	 	1	The default (0), means no log to linear transform, 1 uses the
+										cineon transform (see cineon.whiteCodeValue and
+										cineon.blackCodeValue below) and 1 means use the Viper
+										camera log to linear transform.
+color.invert 			int 	 	1	If non-0, invert the image color using the inversion matrix
+										(See User's Manual)
+color.sRGB2linear 		int 	 	1	If the value is non-0, convert the incoming pixels from sRGB
+										space to linear space
+color.Rec709ToLinear 	int 	 	1	If the value is non-0, convert the incoming pixels using the
+										inverse of the Rec709 transfer function
+color.gamma 			float[3] 	1 	Apply a gamma. The default is [1.0, 1.0, 1.0]. The three
+										values are applied to R G and B channels independently.
+color.fileGamma 		float 		1 	Apply a gamma to linearize the incoming image. The default
+										is 1.0.
+color.lut 								Not currently used
+color.offset 			float[3]    1   Color bias added to incoming color channels. Default = 0 (not
+										bias). Each component is applied to R G B independently.
+color.exposure 			float[3] 	1 	Relative exposure in stops. Default = [0, 0, 0], See user's
+										manual for more information on this. Each component is
+										applied to R G and B independently.
+color.contrast 			float[3] 	1 	Contrast applied per channel (see User's Manual)
+color.saturation 		float 		1 	Relative saturation (see User's Manual)
+color.hue 				float 		1 	Hue rotation in radians (see User's Manual)
+color.active 			int 		1 	If 0, do not apply any color transforms. Disables the node.
+color.ignoreChromaticities 	int 	1 	If non-0, ignore any non-Rec 709 chromaticities reported by

@@ -1,0 +1,100 @@
+# Node
+nodesOfType(typename)
+	nodesOfType("RVSourceGroup")
+	nodesOfType("RVFileSource")
+
+
+nodeType  ( string ; string nodeName )
+	if nodeType(node)=="RVFileSource":
+
+nodesInGroup	 ( string[] ; string nodeName )
+setNodeInputs	 ( void ; string nodeName, string[] inputNodes )
+testNodeInputs	 ( string ; string nodeName, string[] inputNodes ) #?
+nodeGroup	 ( string ; string nodeName )
+
+nodeExists	 ( bool ; string nodeName )
+deleteNode	 ( void ; string nodeName )
+newNode	 ( string ; string nodeType, string nodeName = nil )
+
+nodes	 ( string[] ; )
+
+#Source
+addSource	 ( void ; string[] fileNames, string tag = nil )
+addSource	 ( void ; string fileName, string tag = nil )
+addSourceVerbose	 ( string ; string[] fileNames, string tag = nil )
+addSources	 ( void ; string[] fileNames, string tag = nil, bool processOpts = false, bool merge = false )
+
+addToSource	 ( void ; string sourceNode, string fileName, string tag )
+addToSource	 ( void ; string fileName, string tag = nil )
+
+setSourceMedia	 ( void ; string sourceNode, string[] fileNames, string tag = nil )
+sourceMediaInfo	 ( SourceMediaInfo ; string sourceName, string mediaName = nil )
+sourceMedia(RVFileSource_nodename)
+	(u'D:/test.mov', [], [u'track 1']) 
+sources	 ( (string,int,int,int,float,bool,bool)[] ; )
+	Returns an array of source media.
+	 string	 file name
+	 int	 start frame
+	 int	 end frame
+	 int	 frame increment
+	 float	 fps
+	 bool	 true if media has audio
+	 bool	 true if media has video 
+	[(u'D:/test.mov', 1, 46, 1, 24.0, True, True), (u'D:/test1.mov', 1, 46, 1, 24.0, True, True)]
+
+sourceAttributes	 ( (string,string)[] ; string sourceName, string mediaName = nil ) # ***
+	[(key,value),...]
+
+sourceNameWithoutFrame	 ( string ; string name ) #?
+
+relocateSource	 ( void ; string sourceNode, string oldFileName, string newFileName )
+relocateSource	 ( void ; string oldFileName, string newFileName )
+
+
+watchFile	 ( void ; string filename, bool watch )
+
+
+
+# Session
+newSession	 ( void ; string[] sources )
+clearSession()
+sessionNames	 ( string[] ; )
+sessionName	 ( string ; )
+sessionFileName	 ( string ; )
+getSessionType	 ( int ; )
+setSessionType	 ( void ; int sessionType )
+saveSession	 ( void ; string fileName, bool asACopy = false, bool compressed = false )
+setSessionName	 ( void ; string name )
+
+#View
+setViewNode	 ( void ; string nodeName )
+viewNodes	 ( string[] ; )
+viewSize	 ( vector float[2] ; )
+setViewSize	 ( void ; int width, int height )
+viewNode	 ( string ; )
+
+
+# Contral
+close	 ( void ; )
+setFPS	 ( void ; float fps )
+eval	 ( string ; string text )
+myNetworkPort	 ( int ; )
+theTime	 ( float ; )
+play	 ( void ; )
+playMode	 ( int ; )
+isPlaying	 ( bool ; )
+undo	 ( void ; )
+redoHistory	 ( string[] ; )
+reload	 ( void ; int startFrame, int endFrame )
+reload	 ( void ; )
+fps	 ( float ; )
+openMediaFileDialog	 ( string[] ; bool associated, int selectType, string filter = nil, string defaultPath = nil, string label = nil )
+openFileDialog	 ( string[] ; bool associated, bool multiple, bool directory, [(string,string)] filters, string defaultPath = nil )
+openFileDialog	 ( string[] ; bool associated, bool multiple = false, bool directory = false, string filter = nil, string defaultPath = nil )
+saveFileDialog	 ( string ; bool associated, string filter = nil, string defaultPath = nil, bool directory = false )
+fullScreenMode	 ( void ; bool active )
+showConsole	 ( void ; )
+writeSetting	 ( void ; string group, string name, SettingsValue value ) #?
+
+sequenceOfFile	 ( (string,int) ; string file ) #?
+

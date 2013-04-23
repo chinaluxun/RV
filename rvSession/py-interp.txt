@@ -1,0 +1,4 @@
+..\rv-win32-x86-3.12.17\bin\py-interp.exe
+
+
+D:\GreenSoftware\rv-win32-x86-3.12.17\bin>py-interp D:\GreenSoftware\rv-win32-x86-3.12.17\src\python\rvSession\debug.py
